@@ -1,0 +1,28 @@
+.textSize{
+    /* width: 90%; */
+    color: red;
+    font-size: 180px;
+    font-weight: 700;
+    margin-top: -50px;
+}
+.text1{
+    color: rgb(245, 243, 243);
+    font-size: 70px;
+    font-weight:400
+}
+.text2{
+    color: rgb(245, 243, 243);
+    font-size: 50px;
+    font-weight: 100;
+    font-weight:300
+    
+}
+.ImgSize{
+height: 100%;
+width: 70%;
+}
+#BackColor{
+ background-color: rgb(55, 53, 53);
+ border-radius: 0px;
+ 
+}

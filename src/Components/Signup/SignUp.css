@@ -1,0 +1,27 @@
+.Backgroundimg {
+    background-image: url("../Images/MicrosoftTeams-image.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+   
+
+}
+
+.pcolor{
+    color: white;
+}
+#boxes{
+    border-radius: 0px;
+}
+
+.card1{
+   
+    border: 1px solid rgb(75, 72, 72);
+    /* margin-top: 50px;
+    margin-bottom: 50px; */
+    margin: 50px;
+}
+.textHeading{
+    color: white;
+    text-align: center;
+     margin-right: 400px;
+}

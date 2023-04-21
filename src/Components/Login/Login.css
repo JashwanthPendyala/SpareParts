@@ -1,26 +1,53 @@
-.backImg{
+.backImg {
     background-image: url("../Images/BikeImg.png");
     background-repeat: no-repeat;
-    background-size:100% 100%;
-   
-    
+    background-size: 100% 100%;
+
+
 }
- .card2{
+
+.card2 {
     border: 1px solid rgb(212, 207, 207);
-     margin: 50px;
+    margin: 50px;
 }
-.textHeading1{
+
+.textHeading1 {
     color: white;
     text-align: center;
     text-decoration: underline;
-    
+
 }
-#boxes1{
+
+#boxes1 {
     border-radius: 0px;
     margin-left: -20px;
-    
+
 }
-.box{
+
+.box {
     margin-left: -30px;
     color: white;
+}
+
+
+
+/* New Login CSS */
+.left-banner {
+    /* The image used */
+    background-image: url("/public/login.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.vehicles {
+    position: relative;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50px,-50px);
 }

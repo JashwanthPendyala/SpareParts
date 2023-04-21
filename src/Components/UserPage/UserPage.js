@@ -9,7 +9,10 @@ function UserPage() {
 
     const handleLogout = () => {
         console.log(sessionStorage.getItem("X-CSRFTOKEN"));
-        axios.get("http://192.168.7.148:8010/user/logout/").then(response => {
+        axios.get("http://192.168.7.148:8010/user/logout/", {
+           
+            
+        }).then(response => {
             console.log(response.data, "Im at line 36");
         })
     }

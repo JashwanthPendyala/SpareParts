@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Login/Login.css'
 import { Button, Card, Col, Container, Form, Modal, Row } from 'react-bootstrap'
 import { Link, Navigate, useNavigate, } from 'react-router-dom'
@@ -14,9 +14,14 @@ function Login() {
     const [arr, setArr] = useState([])
     const [response, setResponse] = useState()
     const navigate = useNavigate();
+    const [loginStatus, setLoginStatus] = useState('')
 
  
+useEffect(()=>{
+    sessionStorage.setItem("X-CSRFTOKEN", "")
+    
 
+},[])
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(email, password);
@@ -35,11 +40,21 @@ function Login() {
 
         axios.post("http://192.168.7.148:8010/user/login/", obj)
             .then(response => {
+                const cookie = response.headers['X-CSRFTOKEN'];
                 console.log(response.data, "Im at line 36");
                 // setResponse(response.data.user)
                 console.log(response.data.token)
-                sessionStorage.setItem("X-CSRFTOKEN", response.data.token);
+                sessionStorage.setItem("X-CSRFTOKEN", cookie);
+                sessionStorage.setItem("loginStatus",response.data.data.message)
+                console.log(response.data.data.message);
+                setLoginStatus(response.data.message)
             })
+           console.log(sessionStorage.getItem("X-CSRFTOKEN"),"HII");
+            console.log(sessionStorage.getItem("loginStatus"))
+            if(sessionStorage.getItem("loginStatus") === "user logged in"){
+                navigate('/userpage')
+            }
+            
     }
     const handlepassword = () => {
       
@@ -107,7 +122,7 @@ function Login() {
                 </div>
             </Card>
             <div>
-                <Modal show={show} >
+                {/* <Modal show={show} >
 
                     <Modal.Body>
                         <h6>
@@ -119,7 +134,7 @@ function Login() {
                             <Button className="btn btn-success" onClick={handleClose}>ok</Button>
                         </Link>
                     </Modal.Footer>
-                </Modal>
+                </Modal> */}
             </div>
         </div>
 

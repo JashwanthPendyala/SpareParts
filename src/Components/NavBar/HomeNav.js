@@ -14,10 +14,10 @@ function HomeNav() {
                     <Navbar.Collapse className="justify-content-end">
                         <Row>
                             <Col>
-                                <Link to='/signin'><Button className='btn btn-info'>Login</Button></Link>
+                              <Button className='btn btn-info'>Login</Button>
                             </Col>
                             <Col>
-                                <Link to='/signup'><Button className='btn btn-info'> Signup</Button></Link>
+                                <Button className='btn btn-info'> Signup</Button>
                             </Col>
                         </Row>
                     </Navbar.Collapse>

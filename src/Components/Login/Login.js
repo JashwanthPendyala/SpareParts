@@ -19,7 +19,7 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email, password);
+        // console.log(email, password);
 
         const obj = {
             email: email,
@@ -32,14 +32,16 @@ function Login() {
         setEmail("")
         setPassword("")
         setShow(true)
-
-        axios.post("http://192.168.7.148:8010/user/login/", obj)
+        // debugger
+        axios.post("http://192.168.4.9:8011/user/login/", obj)
+        
             .then(response => {
                 console.log(response.data, "Im at line 36");
-                // setResponse(response.data.user)
-                console.log(response.data.token)
-                sessionStorage.setItem("X-CSRFTOKEN", response.data.token);
+                setResponse(response.data.user)
+                console.log(response.data.token,"#####")
+                localStorage.setItem('token', response.data.token);
             })
+
     }
     const handlepassword = () => {
       
